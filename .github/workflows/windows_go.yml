@@ -26,17 +26,16 @@ jobs:
       - name: Version
         run: go version
 
-      - name: Go to build directory
-        run: |
-          cd build
-          cd go
-
       - name: Install dependencies
         run: |
+          cd raknet_go
           go get -u github.com/sandertv/go-raknet
 
       - name: Build
-        run: .\build.bat
+        run: |
+          cd build
+          cd go
+          .\build.bat
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
