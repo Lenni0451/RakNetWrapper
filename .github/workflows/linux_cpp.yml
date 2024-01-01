@@ -28,6 +28,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: raknet
-          path: |
-            build/cpp/raknet-x86.so
-            build/cpp/raknet-x86-x64.so
+          path: build/cpp/*.so
