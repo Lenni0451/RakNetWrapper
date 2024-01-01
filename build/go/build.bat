@@ -1,3 +1,4 @@
 @echo off
 
-go build -ldflags="-s -w" -trimpath -o go-raknet.dll -buildmode=c-shared ..\..\raknet_go\dllmain.go
+cd ..\..\raknet_go
+go build -ldflags="-s -w" -trimpath -o go-raknet.dll -buildmode=c-shared dllmain.go

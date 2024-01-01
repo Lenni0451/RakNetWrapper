@@ -26,18 +26,20 @@ jobs:
       - name: Version
         run: go version
 
+      - name: Go to build directory
+        run: |
+          cd build
+          cd go
+
       - name: Install dependencies
         run: |
           go get -u github.com/sandertv/go-raknet
 
       - name: Build
-        run: |
-          cd build
-          cd go
-          .\build.bat
+        run: .\build.bat
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
           name: go-raknet-${{ matrix.architecture }}
-          path: build/go/bin/go-raknet.dll
+          path: raknet_go/go-raknet.dll
