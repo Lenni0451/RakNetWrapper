@@ -26,6 +26,10 @@ jobs:
       - name: Version
         run: go version
 
+      - name: Install dependencies
+        run: |
+          go get -u github.com/sandertv/go-raknet
+
       - name: Build
         run: |
           cd build
