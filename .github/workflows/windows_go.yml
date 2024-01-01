@@ -7,6 +7,12 @@ jobs:
   build:
     runs-on: windows-latest
 
+    strategy:
+      matrix:
+        architecture:
+          - amd64
+          - arm64
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -15,7 +21,7 @@ jobs:
         uses: actions/setup-go@v4
         with:
           go-version: "^1.21.5"
-          architecture: amd64
+          architecture: ${{ matrix.architecture }}
 
       - name: Version
         run: go version
@@ -34,5 +40,5 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: raknet-amd64
+          name: raknet-${{ matrix.architecture }}
           path: raknet_go/go-raknet.dll
