@@ -1,0 +1,33 @@
+name: Linux C++ Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y build-essential g++ g++-multilib
+
+      - name: Build
+        run: |
+          cd build
+          cd cpp
+          bash build.sh
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: raknet
+          path: |
+            build/cpp/raknet-x86.so
+            build/cpp/raknet-x86-x64.so
