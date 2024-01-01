@@ -1,4 +1,4 @@
-name: Linux Go Build
+name: MacOS Go Build
 
 on:
   workflow_dispatch:
