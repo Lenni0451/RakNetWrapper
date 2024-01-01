@@ -1,0 +1,38 @@
+name: Linux Go Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: "^1.21.5"
+          architecture: amd64
+
+      - name: Version
+        run: go version
+
+      - name: Install dependencies
+        run: |
+          cd raknet_go
+          go get -u github.com/sandertv/go-raknet
+
+      - name: Build
+        run: |
+          cd build
+          cd go
+          bash build.sh
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: raknet-amd64
+          path: raknet_go/go-raknet.so
