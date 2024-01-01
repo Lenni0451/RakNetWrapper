@@ -26,7 +26,7 @@ jobs:
         run: |
           cd build
           cd c
-          build.bat
+          .\build.bat
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
