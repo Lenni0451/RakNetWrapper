@@ -1,0 +1,39 @@
+name: Windows Go Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    strategy:
+      matrix:
+        architecture:
+          - amd64
+          - 386
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: "^1.21.5"
+          architecture: ${{ matrix.architecture }}
+      
+      - name: Version
+        run: go version
+      
+      - name: Build
+        run: 
+          cd build
+          cd go
+          .\build.bat
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: go-raknet-${{ matrix.architecture }}
+          path: build/go/bin/go-raknet.dll
