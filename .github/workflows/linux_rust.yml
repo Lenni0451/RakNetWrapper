@@ -26,5 +26,5 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: raknet-amd64
+          name: raknet
           path: raknet_rs/target/release/librust-raknet.so
