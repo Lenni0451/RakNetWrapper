@@ -1,4 +1,4 @@
-name: Rust Build
+name: Linux Rust Build
 
 on:
   workflow_dispatch:
