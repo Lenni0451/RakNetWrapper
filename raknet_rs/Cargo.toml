@@ -1,0 +1,21 @@
+[package]
+name = "rust-raknet-wrapper"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.release]
+strip = true
+debug = false
+overflow-checks = false
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[dependencies]
+rust-raknet = {git="https://github.com/b23r0/rust-raknet.git"}
+tokio = {version = "1.35.1", features = ["full"]}
+futures = "0.3.30"
