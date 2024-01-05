@@ -27,4 +27,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: raknet-amd64
-          path: target/release/
+          path: raknet_rs/target/release/rust-raknet.so
