@@ -1,5 +1,5 @@
 [package]
-name = "rust-raknet-wrapper"
+name = "rust-raknet"
 version = "0.1.0"
 edition = "2021"
 
