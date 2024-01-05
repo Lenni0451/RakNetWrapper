@@ -21,7 +21,7 @@ jobs:
         run: |
           cd build
           cd rust
-          bash build.sh
+          .\build.bat
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
