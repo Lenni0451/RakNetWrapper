@@ -2,4 +2,4 @@
 
 cd ../../raknet_rs
 cargo build --release
-#mv ../../raknet_rs/target/release/librust_raknet.so ../../raknet_rs/target/release/librust-raknet-x64.so
+mv target/release/librust_raknet.so target/release/librust-raknet.so
