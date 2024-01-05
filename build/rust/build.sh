@@ -2,4 +2,4 @@
 
 cd ../../raknet_rs
 cargo build --release
-mv target/release/librust_raknet.so target/release/librust-raknet.so
+mv target/release/$1 target/release/$2
