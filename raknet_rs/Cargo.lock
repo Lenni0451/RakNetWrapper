@@ -338,20 +338,20 @@ dependencies = [
 
 [[package]]
 name = "rust-raknet"
+version = "0.1.0"
+dependencies = [
+ "futures",
+ "rust-raknet 0.12.0",
+ "tokio",
+]
+
+[[package]]
+name = "rust-raknet"
 version = "0.12.0"
 source = "git+https://github.com/b23r0/rust-raknet.git#c9c2424e61baf2fcdb4ef6e85de9c806477b31f1"
 dependencies = [
  "bytes",
  "rand",
- "tokio",
-]
-
-[[package]]
-name = "rust-raknet-wrapper"
-version = "0.1.0"
-dependencies = [
- "futures",
- "rust-raknet",
  "tokio",
 ]
 
