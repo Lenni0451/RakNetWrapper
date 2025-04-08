@@ -17,5 +17,5 @@ panic = "abort"
 
 [dependencies]
 rust-raknet = {git="https://github.com/b23r0/rust-raknet.git"}
-tokio = {version = "1.44.1", features = ["full"]}
+tokio = {version = "1.44.2", features = ["full"]}
 futures = "0.3.31"
