@@ -37,7 +37,7 @@ jobs:
           bash build.sh go-raknet.so
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: raknet-${{ matrix.architecture }}
           path: raknet_go/go-raknet.so
