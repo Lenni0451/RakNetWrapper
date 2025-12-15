@@ -24,7 +24,7 @@ jobs:
           bash build.sh librust_raknet.so librust-raknet.so
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: raknet-amd64
           path: raknet_rs/target/release/librust-raknet.so
