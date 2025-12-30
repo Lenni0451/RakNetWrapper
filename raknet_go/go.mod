@@ -4,4 +4,4 @@ go 1.22
 
 toolchain go1.23.1
 
-require github.com/sandertv/go-raknet v1.14.2
+require github.com/sandertv/go-raknet v1.15.0
